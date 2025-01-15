@@ -40,6 +40,10 @@ function AddPersonForm() {
       setNameErr("Please fill out this field");
       isValid = false;
     }
+    else if(name.length <= 4){
+      setNameErr("Name size must be more than 4 letters");
+      isValid = false;
+    }
   
     
     if (dob.length === 0) {
