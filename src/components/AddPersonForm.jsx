@@ -67,7 +67,7 @@ function AddPersonForm() {
       setPhoneErr("Please fill out this field");
       isValid = false;
     } else if (!phoneRegex.test(phone)) {
-      setPhoneErr("Phone number must be 10 digits long.");
+      setPhoneErr("Phone number must be 10 digits long and first number should be from 7-9. ");
       isValid = false;
     }
   
