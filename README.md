@@ -1,8 +1,11 @@
-# React + Vite
+[Hoosted Link](https://directory-app-kappa.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Directory App
 
-Currently, two official plugins are available:
+## Features
+### Adding new user's data 
+### Deleting Existing user 
+### Filtering out user based on Adhar card number 
+### Error handling for user inputs 
+### Form validation 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
