@@ -39,17 +39,14 @@ function AddPersonForm() {
     if (name.length === 0) {
       setNameErr("Please fill out this field");
       isValid = false;
-    }
-    else if(name.length <= 4){
+    } else if (name.length <= 4) {
       setNameErr("Name size must be more than 4 letters");
       isValid = false;
-    }
-    else if (!/[A-Z]/.test(name)) {
+    } else if (!/^[A-Z][a-zA-Z]*/.test(name)) {
       setNameErr("Name must contain at least one capital letter");
       isValid = false;
     }
   
-    
     if (dob.length === 0) {
       setDobErr("Please fill out this field");
       isValid = false;
@@ -61,14 +58,30 @@ function AddPersonForm() {
     } else if (!adharRegex.test(adhar)) {
       setAdharErr("Adhar number must be 12 digits long.");
       isValid = false;
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].adhar === adhar) {
+          setAdharErr("Adhar number must be unique.");
+          isValid = false;
+          break; 
+        }
+      }
     }
   
     if (phone.length === 0) {
       setPhoneErr("Please fill out this field");
       isValid = false;
     } else if (!phoneRegex.test(phone)) {
-      setPhoneErr("Phone number must be 10 digits long and first number should be from 7-9. ");
+      setPhoneErr("Phone number must be 10 digits long and first number should be from 7-9.");
       isValid = false;
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].phone === phone) {
+          setPhoneErr("Phone number must be unique.");
+          isValid = false;
+          break;
+        }
+      }
     }
   
     if (!isValid) {
@@ -94,6 +107,7 @@ function AddPersonForm() {
     setAge('');
     setOpenForm(false);
   }
+  
   
 
   function calculateAge() {
