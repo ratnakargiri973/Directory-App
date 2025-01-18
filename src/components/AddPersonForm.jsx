@@ -43,7 +43,7 @@ function AddPersonForm() {
       setNameErr("Name size must be more than 4 letters");
       isValid = false;
     } else if (!/^[A-Z][a-zA-Z]*/.test(name)) {
-      setNameErr("Name must contain at least one capital letter");
+      setNameErr("First letter of name should be capital letter");
       isValid = false;
     }
   
